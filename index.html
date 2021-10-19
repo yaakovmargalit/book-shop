@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Encode+Sans+Expanded&display=swap" rel="stylesheet">
+
+    <title>Book Shop</title>
+</head>
+
+<body onload="init()">
+
+    <div class="main">
+        <h1 data-trans="title-shop">Welcome to my bookshop</h1>
+        <!-- select Leng -->
+        <div class="select-box">
+            <div class="select-box__current" tabindex="1">
+                <div class="select-box__value">
+                    <input class="select-box__input" type="radio" id="0" value="en" name="Ben" checked="checked" />
+                    <p class="select-box__input-text">English</p>
+                </div>
+                <div class="select-box__value">
+                    <input class="select-box__input" type="radio" id="1" value="he" name="Ben" />
+                    <p class="select-box__input-text">עברית</p>
+                </div>
+                <div class="select-box__value">
+                    <input class="select-box__input" type="radio" id="2" value="es" name="Ben" />
+                    <p class="select-box__input-text">Spanish</p>
+                </div>
+                <img class="select-box__icon" src="http://cdn.onlinewebfonts.com/svg/img_295694.svg" alt="Arrow Icon" aria-hidden="true" />
+            </div>
+            <ul class="select-box__list">
+                <li>
+                    <label onclick="onSetLang('en')" class="select-box__option" for="0" aria-hidden="aria-hidden">English</label>
+                </li>
+                <li>
+                    <label onclick="onSetLang('he')" class="select-box__option" for="1" aria-hidden="aria-hidden">עברית</label>
+                </li>
+                <li>
+                    <label onclick="onSetLang('es')" class="select-box__option" for="2" aria-hidden="aria-hidden">Spanish</label>
+                </li>
+            </ul>
+        </div>
+
+        <button data-trans="new-book-btn" class="new-btn" onclick="onNewBook('new-book-modal')">Create new book</button>
+        <div class="books-box">
+
+        </div>
+
+
+        <div class="page">
+        </div>
+    </div>
+    <div class="modal"></div>
+
+    <script src="js/util.js"></script>
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/book.service.js"></script>
+    <script src="js/services/i18n-service.js"></script>
+    <script src="js/controls/book.control.js"></script>
+</body>
+
+</html>
